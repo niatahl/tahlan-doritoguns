@@ -1,0 +1,9 @@
+{
+	"id":"tahlan-doritoguns", # internal id
+	"name":"Dorito Guns", # displayed to the player
+	"author":"Nia",
+	"version":"0.1",
+	"description":"'WIP",
+	"gameVersion":"0.95.1a-RC69",
+	"jars":["jars/tahlan-doritoguns.jar"],
+}

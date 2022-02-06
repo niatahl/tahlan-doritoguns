@@ -1,0 +1,11 @@
+{
+	"graphics":{
+		"fx":{
+			"IndEvo_trail_stream":"graphics/fx/trails_stream.png",
+			"IndEvo_trail_foggy":"graphics/fx/trails_foggy.png",
+			"IndEvo_trail_spatter":"graphics/fx/trails_spatter.png",
+			"IndEvo_stream_fringe":"graphics/fx/IndEvo_stream_fringe.png",
+			"IndEvo_stream_core":"graphics/fx/IndEvo_stream_core.png",
+		},
+	}
+}
