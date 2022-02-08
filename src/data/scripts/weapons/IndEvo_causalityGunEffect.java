@@ -45,18 +45,20 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
             }
 
             // muzzle visuals
-            engine.addNegativeNebulaParticle(
-                    beam.getFrom(),
-                    beam.getWeapon().getShip().getVelocity(),
-                    MathUtils.getRandomNumberInRange(30f, 50f),
-                    1.3f,
-                    0.1f,
-                    0.3f,
-                    MathUtils.getRandomNumberInRange(0.5f, 1.5f),
-                    NEBULA_COLOR
-            );
+            if (Math.random() > 0.75f) {
+                engine.addNegativeNebulaParticle(
+                        beam.getFrom(),
+                        beam.getWeapon().getShip().getVelocity(),
+                        MathUtils.getRandomNumberInRange(50f, 70f),
+                        1.3f,
+                        0.1f,
+                        0.3f,
+                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        NEBULA_COLOR
+                );
+            }
             float size = beam.getWidth() * MathUtils.getRandomNumberInRange(2f, 2.2f);
-            float flashDur = MathUtils.getRandomNumberInRange(0.2f,0.25f);
+            float flashDur = MathUtils.getRandomNumberInRange(0.2f, 0.25f);
             engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), beam.getWidth(), 0.8f, flashDur, beam.getCoreColor());
             engine.addHitParticle(beam.getFrom(), beam.getSource().getVelocity(), size, 0.8f, flashDur, beam.getFringeColor().brighter());
 
