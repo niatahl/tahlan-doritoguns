@@ -11,6 +11,10 @@ import java.awt.*;
 public class IndEvo_riftgunOnHitEffect implements OnHitEffectPlugin {
     @Override
     public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
+
+        engine.addSwirlyNebulaParticle(projectile.getLocation(),target.getVelocity(),50f,1.5f,0f,0.3f,0.5f,projectile.getProjectileSpec().getFringeColor(),true);
+        engine.addSwirlyNebulaParticle(projectile.getLocation(),target.getVelocity(),30f,1.5f,0f,0.3f,0.5f,projectile.getProjectileSpec().getCoreColor(),true);
+
         if (!(target instanceof ShipAPI)) {
             return;
         }
