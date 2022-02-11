@@ -6,4 +6,5 @@
 	"description":"'WIP",
 	"gameVersion":"0.95.1a-RC69",
 	"jars":["jars/tahlan-doritoguns.jar"],
+	"modPlugin":"data.scripts.dorito_ModPlugin"
 }
