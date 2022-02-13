@@ -18,7 +18,7 @@ public class IndEvo_riftgunOnHitEffect implements OnHitEffectPlugin {
         if (!(target instanceof ShipAPI)) {
             return;
         }
-        if (Math.random() < 0.9f) {
+        if (Math.random() < 0.8f) {
             return;
         }
 

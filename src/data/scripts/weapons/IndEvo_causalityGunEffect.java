@@ -10,13 +10,17 @@ import java.awt.*;
 
 public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
 
-    private final IntervalUtil interval = new IntervalUtil(0.1f, 0.2f);
+    private final IntervalUtil interval = new IntervalUtil(0.08f, 0.12f);
     private static final Color NEBULA_COLOR = new Color(100, 255, 240, 100);
     private boolean wasZero = true;
     private boolean tick = true;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
+        if (beam.getBrightness() < 1f) {
+            return;
+        }
+        
         interval.advance(amount);
         if (interval.intervalElapsed()) {
 
@@ -25,21 +29,21 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                 engine.addNegativeNebulaParticle(
                         MathUtils.getRandomPointOnLine(beam.getFrom(), beam.getTo()),
                         new Vector2f(0f, 0f),
-                        MathUtils.getRandomNumberInRange(40f, 80f),
+                        MathUtils.getRandomNumberInRange(30f, 80f),
                         1.3f,
                         0.1f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.4f, 0.8f),
                         NEBULA_COLOR
                 );
                 engine.addNebulaParticle(
                         MathUtils.getRandomPointOnLine(beam.getFrom(), beam.getTo()),
                         new Vector2f(0f, 0f),
-                        MathUtils.getRandomNumberInRange(40f, 80f),
+                        MathUtils.getRandomNumberInRange(30f, 80f),
                         1.3f,
                         0.1f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.4f, 0.8f),
                         beam.getFringeColor()
                 );
             }
@@ -53,7 +57,7 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                         1.3f,
                         0.1f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.4f, 0.8f),
                         NEBULA_COLOR
                 );
             }
@@ -72,7 +76,7 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                         1.3f,
                         0f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.5f, 1f),
                         NEBULA_COLOR
                 );
                 engine.addSwirlyNebulaParticle(
@@ -82,7 +86,7 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                         1.3f,
                         0f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.5f, 1f),
                         beam.getFringeColor(),
                         false
                 );
@@ -93,7 +97,7 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                         1.3f,
                         0f,
                         0.3f,
-                        MathUtils.getRandomNumberInRange(0.5f, 1.5f),
+                        MathUtils.getRandomNumberInRange(0.5f, 1f),
                         beam.getFringeColor().brighter(),
                         false
                 );

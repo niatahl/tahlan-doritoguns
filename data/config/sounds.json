@@ -30,9 +30,9 @@
   ],
 
   "IndEvo_riftgun_fire":[
-    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":1.0,"volume":0.4},
-    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.98,"volume":0.4},
-    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.96,"volume":0.4},
-    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.94,"volume":0.4},
+    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":1.0,"volume":0.5},
+    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.98,"volume":0.5},
+    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.96,"volume":0.5},
+    {"file":"sounds/weapons/IndEvo_riftgun_fire.ogg","pitch":0.94,"volume":0.5},
   ],
 }
