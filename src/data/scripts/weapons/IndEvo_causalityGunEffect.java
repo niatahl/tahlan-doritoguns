@@ -13,14 +13,13 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
     private final IntervalUtil interval = new IntervalUtil(0.08f, 0.12f);
     private static final Color NEBULA_COLOR = new Color(100, 255, 240, 100);
     private boolean wasZero = true;
-    private boolean tick = true;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
         if (beam.getBrightness() < 1f) {
             return;
         }
-        
+
         interval.advance(amount);
         if (interval.intervalElapsed()) {
 
@@ -68,7 +67,7 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
 
             // target hit visuals - only every other tick
             // Don't question the dumb implementation, I changed it later and was lazy
-            if (beam.getDamageTarget() != null && tick) {
+            if ((beam.getDamageTarget() != null) && (Math.random() > 0.75f)) {
                 engine.addNegativeSwirlyNebulaParticle(
                         beam.getTo(),
                         new Vector2f(0f, 0f),
@@ -102,7 +101,6 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                         false
                 );
             }
-            tick = !tick;
 
 
             CombatEntityAPI target = beam.getDamageTarget();
