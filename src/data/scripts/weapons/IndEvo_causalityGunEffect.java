@@ -102,13 +102,16 @@ public class IndEvo_causalityGunEffect implements BeamEffectPlugin {
                 );
             }
 
+            if (Math.random() == 0.5f) {
+                return;
+            }
 
             CombatEntityAPI target = beam.getDamageTarget();
             if (target instanceof ShipAPI && beam.getBrightness() >= 1f) {
                 float dur = beam.getDamage().getDpsDuration();
                 // needed because when the ship is in fast-time, dpsDuration will not be reset every frame as it should be
                 if (!wasZero) dur = 0;
-                wasZero = beam.getDamage().getDpsDuration() <= 0;
+                wasZero = dur <= 0;
 
                 ShipAPI ship = (ShipAPI) target;
                 boolean hitShield = target.getShield() != null && target.getShield().isWithinArc(beam.getTo());
